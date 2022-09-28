@@ -1,0 +1,73 @@
+<html>
+   
+    <!-- This type of comments are unusable in ejs file -->
+
+    <head>
+  
+        <!-- These both are same -->    
+        <!-- The key-value pair which comes through the context comes in locals which is a global context, so both are correct. -->
+        <!-- <%= locals.title %>-->
+
+        
+        <title>
+            <%= title %>
+        </title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <!-- Our CSS file is always at the last, So we can override over all the css file included in the project -->
+        <link rel ="stylesheet" href = "/css/home.css">
+    </head>
+
+    <!-- These are syntax of ejs, which is our Tamplete Engine. -->
+    <!-- <%= %> This is used to display or use value, variable -->
+    <!-- <% %> This is used to include the normal js syntax -->
+    <!-- <%# This is the preffered commenting which we should use in ejs file. %> -->
+    <body>
+        <div class = "border">
+            <!-- Displaying Contacts -->
+            <!-- In h tags put all the stuff related to headind -->
+            <h1> 
+                <i class ="fas fa-address-book"></i>
+                My Contacts List 
+            </h1>
+            
+            <!-- If we are creating a List, always contain it in a div, which give us a ease in it's allignment. -->
+            <!-- Use classes over Id and type selectors -->
+            <!-- Flex with percentage width is a great way to pair u things in a line -->
+            <!-- Text-align can only be used with inline tags -->
+
+            
+
+            <div id = list>
+                <ul>
+                    <% for(let item of contact_list) { %> 
+                        <li class = "contact">   
+                            <div class = "details">
+                                <p> <%= item.name %> </p>
+                                <p> <%= item.contact %> </p>
+                            </div>
+
+                            <div class = "delete-contact">
+                                <a href = "/delete-contact/?id=<%= item._id %>">
+                                    <i class ="fas fa-backspace" ></i>
+                                </a>
+                            </div>
+                        </li>
+                    <% } %> 
+                </ul>
+            </div>
+
+            <form action="/create-contact" method="POST">
+                <input type="text" name="name" placeholder="Enter Name" required>
+                <input type="number" name="contact" placeholder="Enter Number" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>            
+    </body>
+
+
+    <!-- Scripts are always included in the end of File. -->
+    <script type ="text/javascript" src = "/js/home.js">
+    </script>
+</html>

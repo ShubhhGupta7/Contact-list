@@ -1,0 +1,75 @@
+/* General CSS */
+body {
+    margin : 0;
+    margin-top : 30px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    color : grey;
+}
+
+/* Contacts List Style */
+
+input:focus {
+    outline : none;
+}
+
+#list {
+    position: relative;
+    width: 50vw;
+    left: 23%;
+    padding: 0;
+}
+
+.contact {
+    padding : 3px 10px;
+    list-style: none; 
+    background-color: gainsboro;
+    color: tomato;  
+    display: flex;
+    border-radius: 0.8rem;
+    /* property: top_bottom left_right; */
+    margin : 5px 0;
+}
+
+.contact .details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: bolder;
+    width : 90%; 
+}
+
+.contact:hover {
+    background-color:silver ;
+    color : red;
+}
+
+.contact p {
+    margin : 5px 0;
+    padding: 0 5px;
+}
+
+.contact .delete-contact {
+    width: 10%;
+    padding-top: 5px;   
+}
+
+.contact .delete-contact a {
+    color : black;
+}
+
+/* Form Styles */
+
+input {
+    border : none;
+    border-bottom : solid 1px black;
+    margin-right : 10px;
+}
+
+button {
+    color : grey;
+    border-radius: 0.8rem;
+}

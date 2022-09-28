@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Playgound
+        </h1>
+        <p> Welcome to the playground! </p>
+        
+        <ul>
+            <% for(let i = 0; i <= 10; i++) { %> 
+                <li>
+                    <%= i %>
+                </li>
+            <% } %>            
+        </ul>
+
+        <% if(true) { %>
+            <h1> Hey!!! I am right. </h1>
+        <% } else { %> 
+            <h1> Sorry, I was Wrong. </h1>
+        <% } %>
+    
+<%# %>
+        <% let i = 0 %>
+        <ul>
+            <% while(i <= 10) { %>
+                <li>
+                    <%= i %>
+                </li>
+                <% i++ %>
+            <% } %>
+        </ul>
+     
+        
+    </body>
+</html>
